@@ -8,13 +8,12 @@ $ pip install pycorpora
 ```
 
 ## Usage
+See
 ```
-$ python random_strange_sentence.py
-Seed? OZZy
-Rule commuting momentum.
+$ python random_strange_sentence.py --help
 ```
 
 ## TODO
-- [ ] Make a better standalone version
+- [x] Make a better standalone version
 - [ ] Make a sentence generator factory with seeding
 - [ ] Publish package on PyPI :confetti_ball:
