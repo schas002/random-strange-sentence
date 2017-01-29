@@ -1,12 +1,9 @@
 from __future__ import print_function
 
-try:
-    import pycorpora
-except:
-    print("Install pycorpora")
-    exit(1)
-
+import pycorpora
 import random
+
+VERSION = "1/170128"
 
 def sentence():
     verblist = pycorpora.words.verbs["verbs"]
@@ -21,5 +18,17 @@ def sentence():
     return sentence + "."
 
 if __name__ == "__main__":
-    random.seed(input("Seed? "))
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate a random strange"
+                                                 "sentence.")
+    parser.add_argument("--version", help="display this program's version",
+                        action="store_true")
+    parser.add_argument("--seed", help="seed the random number generator")
+    args = parser.parse_args()
+    if args.version:
+        print("Generate a random strange sentence.")
+        print("version " + VERSION)
+        exit(0)
+    if args.seed:
+        random.seed(args.seed)
     print(sentence())
